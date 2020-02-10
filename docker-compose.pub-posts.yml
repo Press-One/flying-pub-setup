@@ -3,11 +3,11 @@ version: '3'
 services:
   atom:
     env_file:
-      - ./config_production/atom.env
+      - ./config/atom.env
 
   atom_web:
     env_file:
-      - ./config_production/atom.env
+      - ./config/atom.env
 
   pub:
     image: 'pub'
@@ -15,8 +15,8 @@ services:
     ports:
       - '8000:8000'
     volumes:
-      - ./config_production/config.pub.js:/app/be/config.js:ro
-      - ./config_production/config.pub-wallet.js:/app/be/config.wallet.js
+      - ./config/config.pub.js:/app/be/config.js:ro
+      - ./config/config.pub-wallet.js:/app/be/config.wallet.js
     restart: 'always'
     depends_on:
       - postgres
@@ -26,8 +26,8 @@ services:
     image: 'pub'
     command: bash -c "cd be && yarn start-queue-prod"
     volumes:
-      - ./config_production/config.pub.js:/app/be/config.js:ro
-      - ./config_production/config.pub-wallet.js:/app/be/config.wallet.js
+      - ./config/config.pub.js:/app/be/config.js:ro
+      - ./config/config.pub-wallet.js:/app/be/config.wallet.js
     restart: 'always'
     depends_on:
       - postgres
@@ -39,8 +39,8 @@ services:
     ports:
       - '9000:9000'
     volumes:
-      - ./config_production/config.posts.js:/app/be/config.js:ro
-      - ./config_production/config.posts-wallet.js:/app/be/config.wallet.js
+      - ./config/config.posts.js:/app/be/config.js:ro
+      - ./config/config.posts-wallet.js:/app/be/config.wallet.js
     restart: 'always'
     depends_on:
       - postgres
@@ -50,8 +50,8 @@ services:
     image: 'posts'
     command: bash -c "cd be && yarn start-queue-prod"
     volumes:
-      - ./config_production/config.posts.js:/app/be/config.js:ro
-      - ./config_production/config.posts-wallet.js:/app/be/config.wallet.js
+      - ./config/config.posts.js:/app/be/config.js:ro
+      - ./config/config.posts-wallet.js:/app/be/config.wallet.js
     restart: 'always'
     depends_on:
       - postgres

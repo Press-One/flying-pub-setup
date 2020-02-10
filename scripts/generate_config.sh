@@ -1,1 +1,1 @@
-docker run -it --rm -v $(pwd)/config_production:/app/config_production flying-pub-utils sh -c "./scripts/generate_config.sh"
+docker run -it --rm -v $(pwd)/config:/app/config flying-pub-utils sh -c "./scripts/generate_config.sh"

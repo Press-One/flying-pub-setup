@@ -4,7 +4,7 @@ services:
   atom:
     image: press1/atom
     env_file:
-      - ./config_development/atom.env
+      - ./config/atom.env
     command: bash -c "/wait-for-it.sh postgres:5432 -- diesel migration run && /app/atom syncserver"
     restart: always
     depends_on:
@@ -13,7 +13,7 @@ services:
   atom_web:
     image: press1/atom
     env_file:
-      - ./config_development/atom.env
+      - ./config/atom.env
     command: bash -c "/wait-for-it.sh postgres:5432 -- diesel migration run && /app/atom web"
     ports:
       - 7070:7070
