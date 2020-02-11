@@ -1,1 +1,1 @@
-docker run -it --rm -v $(pwd)/config:/app/config flying-pub-utils sh -c "./scripts/generate_config_prod.sh"
+docker run -it --rm -v $(pwd)/config:/app/config flying-pub-config-generator sh -c "yarn generate_config_prod"

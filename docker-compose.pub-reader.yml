@@ -33,25 +33,25 @@ services:
       - postgres
       - redis
 
-  posts:
-    image: 'posts'
+  reader:
+    image: 'reader'
     command: bash -c "cd be && yarn start-prod"
     ports:
       - '9000:9000'
     volumes:
-      - ./config/config.posts.js:/app/be/config.js:ro
-      - ./config/config.posts-wallet.js:/app/be/config.wallet.js
+      - ./config/config.reader.js:/app/be/config.js:ro
+      - ./config/config.reader-wallet.js:/app/be/config.wallet.js
     restart: 'always'
     depends_on:
       - postgres
       - redis
 
-  posts-queue:
-    image: 'posts'
+  reader-queue:
+    image: 'reader'
     command: bash -c "cd be && yarn start-queue-prod"
     volumes:
-      - ./config/config.posts.js:/app/be/config.js:ro
-      - ./config/config.posts-wallet.js:/app/be/config.wallet.js
+      - ./config/config.reader.js:/app/be/config.js:ro
+      - ./config/config.reader-wallet.js:/app/be/config.wallet.js
     restart: 'always'
     depends_on:
       - postgres
