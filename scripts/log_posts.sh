@@ -1,1 +1,0 @@
-docker-compose -f docker-compose.yml -f docker-compose.pub-posts.yml logs -f posts

@@ -1,1 +1,1 @@
-docker-compose -f docker-compose.yml -f docker-compose.pub-posts.yml logs -f pub
+docker-compose -f docker-compose.yml -f docker-compose.pub-reader.yml logs -f pub
