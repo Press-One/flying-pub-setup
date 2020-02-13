@@ -6,7 +6,7 @@
 
 飞帖就是基于这个架构搭建出来的应用，它已经是真实运行、每天有很多用户在使用着的产品，同时也是作为演示这个架构的例子和模板，可供大家直接使用，或者魔改源码制定自己的版本。
 
-飞帖具体有什么功能呢？请看这篇《[飞帖图文介绍](https://prs.prsdev.club/posts/fa613682fc64ca1e288601e5a0cb1572a5714117f894a60776133e3da0a200e1)》
+飞帖具体有什么功能呢？请看这篇《[飞帖图文介绍](https://prs.prsdev.club/posts/a2a59fa361d98ceb5dd20c10fa1da43aec0ff33251875b434111a0c464bbee75)》
 
 目前在线上运行的飞帖站点：
 
@@ -23,8 +23,8 @@
 
 启动项目之前，你需要安装 Docker
 
-- 如果你使用 Mac，下载[Docker 客户端（Mac）](https://docs.docker.com/docker-for-mac/install/)
-- 如果你使用 Windows，下载[Docker 客户端（Windows）](https://docs.docker.com/docker-for-windows/install/)
+- 如果你使用 Mac，下载 [Docker 客户端（Mac）](https://docs.docker.com/docker-for-mac/install/)
+- 如果你使用 Windows，下载 [Docker 客户端（Windows）](https://docs.docker.com/docker-for-windows/install/)
 - 如果你使用 Linux，根据这个[向导](https://docs.docker.com/compose/install/)来安装 Docker
 
 然后克隆当前这个项目： `git clone xsxx`
@@ -34,7 +34,7 @@
 运行向导程序，根据提示注册两个 Mixin App 即可生成配置文件
 
 ```
-  ./scripts/generate_config_prod.sh
+./scripts/generate_config_prod.sh
 ```
 
 （备注：在启动向导程序时，需要花一点时间初始化环境，完成之后才会进入向导程序）
@@ -60,7 +60,7 @@
 4. 回到写作站，在钱包中查看读者打赏收入和流水
 5. 恭喜你，你已经成功运行了飞帖的核心功能
 
-### 定制自己的站点
+### 定制你自己的站点
 
 你可以通过修改配置文件，然后生成你自己的飞帖站点，配置文件在根目录的 `config` 文件夹中
 
@@ -69,15 +69,19 @@
 
 配置文件里面都有注释说明，和产品相关的配置集中在 `settings` 中，你主要修改这里的配置即可
 
-修改完配置之后，如何让修改生效？重启对应的服务
+修改完配置之后，重启对应的服务，让修改生效
 
 重启写作站
 
+```
 ./scripts/restart_pub.sh
+```
 
 重启阅读站：
 
+```
 ./scripts/restart_reader.sh
+```
 
 ## 想要修改源码或者贡献代码？
 
