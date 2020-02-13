@@ -1,17 +1,9 @@
 version: '3'
 
 services:
-  atom:
-    env_file:
-      - ./config/atom.env
-
-  atom_web:
-    env_file:
-      - ./config/atom.env
-
   pub:
-    image: 'pub'
-    command: bash -c "cd be && yarn start-prod"
+    image: 'dockerhub.qingcloud.com/pressone/pub'
+    command: bash -c "cd be && node bin/run"
     ports:
       - '8000:8000'
     volumes:
@@ -23,7 +15,7 @@ services:
       - redis
 
   pub-queue:
-    image: 'pub'
+    image: 'dockerhub.qingcloud.com/pressone/pub'
     command: bash -c "cd be && yarn start-queue-prod"
     volumes:
       - ./config/config.pub.js:/app/be/config.js:ro
@@ -34,8 +26,8 @@ services:
       - redis
 
   reader:
-    image: 'reader'
-    command: bash -c "cd be && yarn start-prod"
+    image: 'dockerhub.qingcloud.com/pressone/reader'
+    command: bash -c "cd be && wait-on -i 10000 http://pub:8000/api/ping && yarn start-prod"
     ports:
       - '9000:9000'
     volumes:
@@ -47,8 +39,8 @@ services:
       - redis
 
   reader-queue:
-    image: 'reader'
-    command: bash -c "cd be && yarn start-queue-prod"
+    image: 'dockerhub.qingcloud.com/pressone/reader'
+    command: bash -c "cd be && wait-on -i 10000 http://pub:8000/api/ping && yarn start-queue-prod"
     volumes:
       - ./config/config.reader.js:/app/be/config.js:ro
       - ./config/config.reader-wallet.js:/app/be/config.wallet.js

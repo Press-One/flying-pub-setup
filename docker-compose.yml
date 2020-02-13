@@ -2,7 +2,7 @@ version: '3'
 
 services:
   atom:
-    image: press1/atom
+    image: dockerhub.qingcloud.com/pressone/atom
     env_file:
       - ./config/atom.env
     command: bash -c "/wait-for-it.sh postgres:5432 -- diesel migration run && /app/atom syncserver"
@@ -11,7 +11,7 @@ services:
       - postgres
 
   atom_web:
-    image: press1/atom
+    image: dockerhub.qingcloud.com/pressone/atom
     env_file:
       - ./config/atom.env
     command: bash -c "/wait-for-it.sh postgres:5432 -- diesel migration run && /app/atom web"
@@ -22,7 +22,7 @@ services:
       - postgres
 
   postgres:
-    image: postgres
+    image: dockerhub.qingcloud.com/pressone/postgres
     hostname: postgres
     ports:
       - 5432:5432
@@ -35,7 +35,7 @@ services:
       POSTGRES_PASSWORD: 8e01d6f60c7a846c38d5f99cf3f53383
 
   redis:
-    image: 'redis:alpine'
+    image: 'dockerhub.qingcloud.com/pressone/redis:alpine'
     ports:
       - '6379:6379'
     command: redis-server --requirepass a863a35d270fceb110f96374d75c219f --appendonly yes
