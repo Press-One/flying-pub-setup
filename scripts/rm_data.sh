@@ -1,0 +1,1 @@
+rm -rf postgresql && rm -rf redis
