@@ -87,9 +87,9 @@
 
 三大模块仓库列表：
 
-- 写作站（pub）
-- 阅读站（reader）
-- 同步服务（atom）
+- [写作站（pub）](https://github.com/Press-One/pub)
+- [阅读站（reader）](https://github.com/Press-One/pub)
+- [同步服务（atom）](https://github.com/Press-One/pub)
 
 ## 遇到问题或者反馈建议？
 
