@@ -1,10 +1,12 @@
-## 飞帖是什么？为什么会有飞帖这个产品？
+## 飞帖是什么？
 
 先介绍一个基于区块链的架构：使用区块链作为消息总线，让不同的应用之间通过这个统一的消息系统来交互，实现内容的发布和订阅。它可以解决互联网应用各自隔离的问题，让不同应用之间沟通更透明，更简单，所有用户发布的数据直接可以在区块链上确权。
 
 ![Flying pub architecture](https://static.press.one/blogimgs/image1.png)
 
 飞帖就是基于这个架构搭建出来的应用，它已经是真实运行、每天有很多用户在使用着的产品，同时也是作为演示这个架构的例子和模板，可供大家直接使用，或者魔改源码制定自己的版本。
+
+飞帖具体有什么功能呢？请看这篇《[飞帖图文介绍](https://prs.prsdev.club/posts/fa613682fc64ca1e288601e5a0cb1572a5714117f894a60776133e3da0a200e1)》
 
 目前在线上运行的飞帖站点：
 
@@ -17,12 +19,15 @@
 
 ## 开始
 
-### 安装
+### 环境准备
 
 启动项目之前，你需要安装 Docker
 
-- [Docker 下载（Mac）](https://docs.docker.com/docker-for-mac/install/)
-- [Docker 下载（Windows）](https://docs.docker.com/docker-for-windows/install/)
+- 如果你使用 Mac，下载[Docker 客户端（Mac）](https://docs.docker.com/docker-for-mac/install/)
+- 如果你使用 Windows，下载[Docker 客户端（Windows）](https://docs.docker.com/docker-for-windows/install/)
+- 如果你使用 Linux，根据这个[向导](https://docs.docker.com/compose/install/)来安装 Docker
+
+然后克隆当前这个项目： `git clone xsxx`
 
 ### 生成配置
 
@@ -32,9 +37,15 @@
   ./scripts/generate_config_prod.sh
 ```
 
+（备注：在启动向导程序时，需要花一点时间初始化环境，完成之后才会进入向导程序）
+
 ### 启动
 
-./scripts/start_prod.sh
+```
+  ./scripts/start_prod.sh
+```
+
+（备注：这个过程需要花些时间，你可以先去干点其他事情）
 
 项目启动完毕，你可以访问以下服务：
 
@@ -76,6 +87,6 @@
 - 阅读站（reader）
 - 同步服务（atom）
 
-## 遇到问题？
+## 遇到问题或者反馈建议？
 
-反馈渠道：[gitter 聊天室](https://gitter.im/flying-pub/community)或者 Issue
+沟通渠道：[gitter 聊天室](https://gitter.im/flying-pub/community)或者 Issue
