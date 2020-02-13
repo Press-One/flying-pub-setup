@@ -2,7 +2,7 @@
 
 先介绍一个基于区块链的架构：使用区块链作为消息总线，让不同的应用之间通过这个统一的消息系统来交互，实现内容的发布和订阅。它可以解决互联网应用各自隔离的问题，让不同应用之间沟通更透明，更简单，所有用户发布的数据直接可以在区块链上确权。
 
-![Flying pub architecture](https://static.press.one/blogimgs/image1.png)
+![Flying pub architecture](https://xue-images.pek3b.qingstor.com/213-flying-pub-art.png)
 
 飞帖就是基于这个架构搭建出来的应用，它已经是真实运行、每天有很多用户在使用着的产品，同时也是作为演示这个架构的例子和模板，可供大家直接使用，或者魔改源码制定自己的版本。
 
@@ -21,13 +21,13 @@
 
 ### 环境准备
 
-启动项目之前，你需要安装 Docker
+你需要安装 Docker
 
 - 如果你使用 Mac，下载 [Docker 客户端（Mac）](https://docs.docker.com/docker-for-mac/install/)
 - 如果你使用 Windows，下载 [Docker 客户端（Windows）](https://docs.docker.com/docker-for-windows/install/)
 - 如果你使用 Linux，根据这个[向导](https://docs.docker.com/compose/install/)来安装 Docker
 
-然后克隆当前这个项目： `git clone xsxx`
+克隆这个项目： `git clone https://github.com/Press-One/flying-pub.git`
 
 ### 生成配置
 
@@ -37,15 +37,15 @@
 ./scripts/generate_config_prod.sh
 ```
 
-（备注：在启动向导程序时，需要花一点时间初始化环境，完成之后才会进入向导程序）
+（备注：在启动向导程序时，需要花一点时间初始化环境，估计耗时 5 分钟，完成之后才会进入向导程序）
 
 ### 启动
 
 ```
-  ./scripts/start_prod.sh
+./scripts/start_prod.sh
 ```
 
-（备注：这个过程需要花些时间，你可以先去干点其他事情）
+（备注：这个过程需要花些时间，估计耗时 15 分钟，你可以先去干点其他事情）
 
 项目启动完毕，你可以访问以下服务：
 
@@ -64,8 +64,8 @@
 
 你可以通过修改配置文件，然后生成你自己的飞帖站点，配置文件在根目录的 `config` 文件夹中
 
-- 写作站配置文件：config.pub.js
-- 阅读站配置文件：config.reader.js
+- 写作站配置文件：`config.pub.js`
+- 阅读站配置文件：`config.reader.js`
 
 配置文件里面都有注释说明，和产品相关的配置集中在 `settings` 中，你主要修改这里的配置即可
 
@@ -88,9 +88,9 @@
 三大模块仓库列表：
 
 - [写作站（pub）](https://github.com/Press-One/pub)
-- [阅读站（reader）](https://github.com/Press-One/pub)
-- [同步服务（atom）](https://github.com/Press-One/pub)
+- [阅读站（reader）](https://github.com/Press-One/reader)
+- [同步服务（atom）](https://github.com/Press-One/atom)
 
 ## 遇到问题或者反馈建议？
 
-沟通渠道：[gitter 聊天室](https://gitter.im/flying-pub/community)或者 Issue
+沟通渠道：[gitter 聊天室](https://gitter.im/flying-pub/community)或者 [Issues](https://github.com/Press-One/flying-pub/issues)
