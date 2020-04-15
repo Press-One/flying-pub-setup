@@ -73,7 +73,7 @@ cd flying-pub
 - 写作站配置文件：`config.pub.js`
 - 阅读站配置文件：`config.reader.js`
 
-配置文件里面都有注释说明，和产品相关的配置集中在 `settings` 中，你主要修改这里的配置即可
+配置文件里面也有注释说明，和产品相关的配置集中在 `settings` 中，你主要修改这里的配置即可（如果你想查看最新支持的配置字段，可以查看[这份文件](https://github.com/Press-One/flying-pub-config-generator/blob/master/src/stringify.js)）
 
 修改完配置之后，重启对应的服务，让修改生效
 
@@ -88,6 +88,20 @@ cd flying-pub
 ```
 ./scripts/restart_reader.sh
 ```
+
+### 发布你的站点
+
+1. 准备好两个域名，一个给写作站，一个给阅读站，比如 `write.xue.cn`, `read.xue.cn`
+2. 到域名服务商的管理后台，配置一条 A 记录，指向你的服务器 IP
+3. 到服务器上面，克隆这个项目
+4. 生成配置（上面有介绍）
+5. 修改 `config/config.pub.js` 里面的 `serviceRoot` 为写作站域名、`reader.url` 为阅读站域名
+6. 修改 `config/config.reader.js` 里面的 `serviceRoot` 为阅读站域名、 `pub.site.url` 为写作站域名
+7. 修改 `scripts/init-letsencrypt.sh` 的第 9 行，`write.xue.cn` 都替换成你的写作站域名，`reader.xue.cn` 都替换成你的阅读站域名，
+8. 把 `nginx/nginx.portal.conf` 的 `write.xue.cn` 都替换成你的写作站域名，`reader.xue.cn` 都替换成你的阅读站域名
+9. 申请免费 https 证书, 在根目录，运行 `./scripts/init-letsencrypt.sh`
+10. 启动服务 `./scripts/deploy.sh`
+11. 部署完毕，可以访问写作站和阅读站了
 
 ## 想要修改源码或者贡献代码？
 

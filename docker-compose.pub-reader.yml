@@ -3,12 +3,12 @@ version: '3'
 services:
   pub:
     image: 'dockerhub.qingcloud.com/pressone/pub'
-    command: bash -c "cd be && node bin/run"
+    command: bash -c "cd server && yarn start-prod"
     ports:
       - '8000:8000'
     volumes:
-      - ./config/config.pub.js:/app/be/config.js:ro
-      - ./config/config.pub-wallet.js:/app/be/config.wallet.js
+      - ./config/config.pub.js:/app/server/config.js:ro
+      - ./config/config.pub-wallet.js:/app/server/config.wallet.js
     restart: 'always'
     depends_on:
       - postgres
@@ -16,10 +16,10 @@ services:
 
   pub-queue:
     image: 'dockerhub.qingcloud.com/pressone/pub'
-    command: bash -c "cd be && yarn start-queue-prod"
+    command: bash -c "cd server && yarn start-queue-prod"
     volumes:
-      - ./config/config.pub.js:/app/be/config.js:ro
-      - ./config/config.pub-wallet.js:/app/be/config.wallet.js
+      - ./config/config.pub.js:/app/server/config.js:ro
+      - ./config/config.pub-wallet.js:/app/server/config.wallet.js
     restart: 'always'
     depends_on:
       - postgres
@@ -27,12 +27,12 @@ services:
 
   reader:
     image: 'dockerhub.qingcloud.com/pressone/reader'
-    command: bash -c "cd be && wait-on -i 10000 http://pub:8000/api/ping && yarn start-prod"
+    command: bash -c "cd server && wait-on -i 10000 http://pub:8000/api/ping && yarn start-prod"
     ports:
       - '9000:9000'
     volumes:
-      - ./config/config.reader.js:/app/be/config.js:ro
-      - ./config/config.reader-wallet.js:/app/be/config.wallet.js
+      - ./config/config.reader.js:/app/server/config.js:ro
+      - ./config/config.reader-wallet.js:/app/server/config.wallet.js
     restart: 'always'
     depends_on:
       - postgres
@@ -40,10 +40,10 @@ services:
 
   reader-queue:
     image: 'dockerhub.qingcloud.com/pressone/reader'
-    command: bash -c "cd be && wait-on -i 10000 http://pub:8000/api/ping && yarn start-queue-prod"
+    command: bash -c "cd server && wait-on -i 10000 http://pub:8000/api/ping && yarn start-queue-prod"
     volumes:
-      - ./config/config.reader.js:/app/be/config.js:ro
-      - ./config/config.reader-wallet.js:/app/be/config.wallet.js
+      - ./config/config.reader.js:/app/server/config.js:ro
+      - ./config/config.reader-wallet.js:/app/server/config.wallet.js
     restart: 'always'
     depends_on:
       - postgres
