@@ -98,7 +98,7 @@ cd flying-pub
 5. 修改 `config/config.pub.js` 里面的 `serviceRoot` 为写作站域名、`reader.url` 为阅读站域名
 6. 修改 `config/config.reader.js` 里面的 `serviceRoot` 为阅读站域名、 `pub.site.url` 为写作站域名
 7. 修改 `scripts/init-letsencrypt.sh` 的第 9 行，`write.xue.cn` 都替换成你的写作站域名，`reader.xue.cn` 都替换成你的阅读站域名，
-8. 把 `nginx/nginx.portal.conf` 的 `write.xue.cn` 都替换成你的写作站域名，`reader.xue.cn` 都替换成你的阅读站域名
+8. 把 `deploy/nginx.portal.conf` 的 `write.xue.cn` 都替换成你的写作站域名，`reader.xue.cn` 都替换成你的阅读站域名
 9. 申请免费 https 证书, 在根目录，运行 `./scripts/init-letsencrypt.sh`
 10. 启动服务 `./scripts/deploy.sh`
 11. 部署完毕，可以访问写作站和阅读站了
