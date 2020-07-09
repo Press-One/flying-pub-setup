@@ -5,6 +5,8 @@ services:
     image: dockerhub.qingcloud.com/pressone/atom
     env_file:
       - ./config/atom.env
+    volumes:
+      - './config/Settings.toml:/app/Settings.toml'
     command: sh -c "/wait-for postgres:5432 -- diesel migration run && /app/atom syncserver"
     restart: always
     depends_on:
@@ -14,6 +16,8 @@ services:
     image: dockerhub.qingcloud.com/pressone/atom
     env_file:
       - ./config/atom.env
+    volumes:
+      - './config/Settings.toml:/app/Settings.toml'
     command: sh -c "/wait-for postgres:5432 -- diesel migration run && /app/atom web"
     ports:
       - 7070:7070
