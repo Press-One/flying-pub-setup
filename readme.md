@@ -113,4 +113,4 @@ cd flying-pub
 
 ## 遇到问题或者反馈建议？
 
-沟通渠道：[gitter 聊天室](https://gitter.im/flying-pub/community)或者 [Issues](https://github.com/Press-One/flying-pub/issues)
+沟通渠道：[Issues](https://github.com/Press-One/flying-pub/issues)
