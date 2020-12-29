@@ -8,10 +8,10 @@
 
 目前在线上运行的飞帖站点：
 
-- [新作](https://zuopin.xin)
-- [PRESS.one 站点](https://prs.prsdev.club)
-- [PRESS.one 博客](https://blog.prsdev.club)
-- [XUE.cn 自学编程](https://xue.prsdev.club)
+- [新作](https://zuopin.xin)，思考与创作平台
+- [PRESS.one 站点](https://prs.prsdev.club)，PRESS.one 用户可以在这里发文章
+- [PRESS.one 博客](https://blog.prsdev.club)，PRESS.one 团队分享项目进展和动态的地方
+- [XUE.cn 自学编程](https://xue.prsdev.club)，XUE.cn 用户写文章的地方
 
 更多介绍可以阅读 PRESS.one 官方发布的《[2020 我们如何看待…](https://blog.prsdev.club/posts/4be956dbbe269a3c0d75e6ade3b2436d162d390a9aa856a19f23ff91946dfcdf)》
 
