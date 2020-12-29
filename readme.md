@@ -8,7 +8,7 @@
 
 目前在线上运行的飞帖站点：
 
-- [新作](http://zuopin.xin/)
+- [新作](https://zuopin.xin)
 - [PRESS.one 站点](https://prs.prsdev.club)
 - [PRESS.one 博客](https://blog.prsdev.club)
 - [XUE.cn 自学编程](https://xue.prsdev.club)
