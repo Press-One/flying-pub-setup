@@ -12,7 +12,6 @@
 - [PRESS.one 站点](https://prs.prsdev.club)
 - [PRESS.one 博客](https://blog.prsdev.club)
 - [XUE.cn 自学编程](https://xue.prsdev.club)
-- [定投践行群（私密）](https://read.firesbox.com)
 
 更多介绍可以阅读 PRESS.one 官方发布的《[2020 我们如何看待…](https://blog.prsdev.club/posts/4be956dbbe269a3c0d75e6ade3b2436d162d390a9aa856a19f23ff91946dfcdf)》
 
