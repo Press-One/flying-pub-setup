@@ -1,0 +1,12 @@
+[atom]
+db_url = "postgres://postgres:39f12851f5275222e8b50fddddf04ee4@postgres:5432/flying_pub_atom"
+prs_base_url = "https://prs-bp[1-3].press.one/api/chain"
+bind_address = "0.0.0.0:7070"
+thread_num = 50
+xml_output_dir = "/app/src/output"
+
+[[topics]]
+name = "flying_pub"
+topic = "0ea59a16e9df81b0780065e294235cf6327adb82"
+encryption_key = "99b32688c8bc95042e18991b47c18bde48d1c0f3ad3531efb9a79c2464124666"
+iv_prefix = "dd4144175a607114419a86a136041c56f6cf8fd233cb1c38cd7b2fd18a8767b9"

@@ -34,7 +34,7 @@ services:
       - ./pg-init-scripts:/docker-entrypoint-initdb.d
       - ./postgresql:/var/lib/postgresql/data
     environment:
-      POSTGRES_MULTIPLE_DATABASES: pub,pub_wallet,reader,reader_wallet,atom
+      POSTGRES_MULTIPLE_DATABASES: flying_pub,flying_pub_wallet,flying_pub_atom
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 39f12851f5275222e8b50fddddf04ee4
 
