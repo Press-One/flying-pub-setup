@@ -1,4 +1,5 @@
-config
+config/config.js
+config/config.wallet.js
 postgresql
 redis
 data
