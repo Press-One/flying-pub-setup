@@ -52,6 +52,7 @@ services:
     volumes:
       - ./config/config.js:/app/server/config.js:ro
       - ./config/config.wallet.js:/app/server/config.wallet.js
+      - ./uploads:/app/server/build/uploads
     logging:
       driver: 'json-file'
       options:

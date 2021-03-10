@@ -3,3 +3,4 @@ config/config.wallet.js
 postgresql
 redis
 data
+uploads
