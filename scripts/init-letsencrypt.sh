@@ -51,6 +51,10 @@ echo "### waiting for $waiting_time_for_nginx_starting seconds ..."
 sleep $waiting_time_for_nginx_starting
 echo
 
+echo "### List docker containers ..."
+docker ps
+echo
+
 for domain in ${domains[@]}; do
   echo "### Deleting dummy certificate for $domain ..."
   docker-compose run --rm --entrypoint "\
