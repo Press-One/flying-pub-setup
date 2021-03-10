@@ -1,0 +1,1 @@
+docker exec -it $(docker ps | grep postgres | awk '{print $1}') psql --dbname=postgresql://postgres:39f12851f5275222e8b50fddddf04ee4@127.0.0.1:5432/flying_pub
