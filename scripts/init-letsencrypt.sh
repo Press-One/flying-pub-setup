@@ -35,7 +35,7 @@ for domain in ${domains[@]}; do
   path="/etc/letsencrypt/live/$domain"
   mkdir -p "$data_path/conf/live/$domain"
   docker-compose run --rm --entrypoint "\
-    openssl req -x509 -nodes -newkey rsa:1024 -days 1\
+    openssl req -x509 -nodes -newkey rsa:2048 -days 1\
       -keyout '$path/privkey.pem' \
       -out '$path/fullchain.pem' \
       -subj '/CN=localhost'" certbot
