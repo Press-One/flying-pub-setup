@@ -1,1 +1,1 @@
-./init-letsencrypt.sh
+./scripts/init-letsencrypt.sh
