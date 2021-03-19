@@ -82,6 +82,9 @@ for domain in ${domains[@]}; do
       --force-renewal" certbot
   echo
 done
+
+mv "data/certbot/conf/live/$domain" data/certbot/conf/live/domain
+
 docker-compose start certbot
 
 echo "### Reloading nginx ..."
