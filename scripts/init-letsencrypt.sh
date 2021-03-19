@@ -6,7 +6,9 @@ if ! [ -x "$(command -v docker-compose)" ]; then
 fi
 
 # 在这里填写你要申请 https 证书的域名
-domains=(flying-pub.prsdev.club)
+config_domain=`cat config.js | grep 'serviceRoot' | awk -F ' = ' '{print $2}' | sed -e "s/'//g" | sed -e "s/;//g"`
+echo "domain: $config_domain"
+domains=($config_domain)
 rsa_key_size=4096
 data_path="./data/certbot"
 staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
