@@ -6,7 +6,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
 fi
 
 # 在这里填写你要申请 https 证书的域名
-config_domain=`cat config.js | grep 'serviceRoot' | awk -F ' = ' '{print $2}' | sed -e "s/'//g" | sed -e "s/;//g"`
+config_domain=`cat ./config/config.js | grep 'serviceRoot' | awk -F ' = ' '{print $2}' | sed -e "s/\"//g" | sed -e "s/;//g"`
 echo "domain: $config_domain"
 domains=($config_domain)
 rsa_key_size=4096
