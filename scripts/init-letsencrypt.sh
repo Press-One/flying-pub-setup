@@ -83,7 +83,7 @@ for domain in ${domains[@]}; do
   echo
 done
 
-mv "data/certbot/conf/live/$config_domain" data/certbot/conf/live/domain
+mv "$data_path/conf/live/$config_domain" "$data_path/conf/live/domain"
 
 docker-compose start certbot
 
